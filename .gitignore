@@ -219,3 +219,11 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 data/
+
+# Local plotting and notebook caches
+.cache/
+
+share/
+results/
+reports/report_checks.json
+.vscode/
