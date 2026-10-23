@@ -5,9 +5,9 @@ Do financial media content help predict next-day stock returns?
 
 ## Overview
 
-This project predicts whether a stock's closing price will rise on the next trading day, using price history and the sentiment of financial news articles scored with FinBERT. We compare a price-only model with a model that also uses news sentiment. Curious how it turned out? 
+This project predicts whether a stock's closing price will rise on the next trading day, using price history and the sentiment of financial news articles scored. We compare a price-only model with a model that also uses news sentiment.
 
-Fair warning: markets are hard to predict, so we are not chasing a perfect score here. This project is more of an exploration on whether the mood of the news carry any signal that prices alone don't? And what if it does...!
+Fair warning: markets are hard to predict, so we are not chasing a perfect score here. This project is more of an exploration on whether the mood of the news carry any signal that prices alone don't. Feel free to swap in your own favorite news source and see what happens!
 
 Want to dig deeper? Here are some decent places to start:
 
@@ -23,12 +23,13 @@ If you wanna run it yourself, here's how.
 
 1. Clone this repo
    `git clone https://github.com/CarmenYan/finmedia-stock-pred.git`
-2. Create the environment
-   `conda env create -f environment.yml && conda activate data1030-proj`
+2. Install requirements (Python 3.12)
+   1. With conda: `conda env create -f environment.yml`, then `conda activate finmedia-stock-pred`
+   2. Or with pip: `pip install -r requirements.txt`
 3. Get free API keys from [Alpaca](https://alpaca.markets/) and put them in `.env` in the project root (this file is git-ignored):
    `API_KEY=...` and `SECRET_KEY=...`
 4. Run the notebooks in `src/` in order: `collect_data.ipynb` → `clean_data.ipynb`
-   (Downloading news takes a while, so grab a coffee!)
+   (Downloading might takes a while)
 
 ## Data
 
@@ -55,7 +56,7 @@ The data files (`data/raw/` and `data/processed/`) are not included in this repo
 ├── src/
 │   ├── collect_data.ipynb 
 │   ├── clean_data.ipynb     
-│   └── scratch/              # initial API exploration 
+│   └── scratch/            # initial API exploration 
 ├── environment.yml
 ├── .gitignore
 ├── LICENSE
