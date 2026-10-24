@@ -1,9 +1,8 @@
 NEWS: One row per news article about a stock, collected from the Alpaca News API.
 
-    ticker: Stock symbol of the company the article was retrieved for.
+    ticker: Stock symbol of the company the article was retrieved for (more stocks may be added later).
            AAPL	Apple Inc. (Information Technology)
            JNJ	Johnson & Johnson (Health Care)
-           ADD MORE SOON
 
     created_at: Date and time the article was published, in UTC (Jan 2020 – Oct 2026). e.g. 2026-10-16 13:14:35+00:00
 
@@ -16,15 +15,15 @@ NEWS: One row per news article about a stock, collected from the Alpaca News API
 
     symbols: List of all stock symbols tagged on the article. e.g. [AAPL, META, MSFT]
 
-    sent_score: (derived) Net sentiment of the article content from FinBERT, positive confidence minus negative confidence
-            ranging from -1 (most negative) to 1 (most positive)
+    text_for_sentiment: (derived) Text used for sentiment scoring: the full article content,
+           or the headline if the content is empty.
+
 
 PRICES: One row per stock per trading day, collected from the Alpaca Market Data API.
 
-    symbol: Stock symbol.
+    symbol: Stock symbol (more stocks may be added later).
            AAPL	Apple Inc. (Information Technology)
            JNJ	Johnson & Johnson (Health Care)
-           ADD MORE SOON
            SPY	SPDR S&P 500 ETF Trust (used as a reference for overall market movement)
 
     timestamp: Trading day, stored as midnight US Eastern time in UTC (Jan 2020 – Oct 2026). e.g. 2020-01-02 05:00:00+00:00
@@ -43,6 +42,6 @@ PRICES: One row per stock per trading day, collected from the Alpaca Market Data
 
     vwap: Volume-weighted average price of the day, in USD.
 
-    target: Whether the stock's closing price rises on the next trading day.
+    target: (derived) Whether the stock's closing price rises on the next trading day.
            1	next trading day's close > today's close
            0	next trading day's close <= today's close
