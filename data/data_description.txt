@@ -1,0 +1,48 @@
+NEWS: One row per news article about a stock, collected from the Alpaca News API.
+
+    ticker: Stock symbol of the company the article was retrieved for.
+           AAPL	Apple Inc. (Information Technology)
+           JNJ	Johnson & Johnson (Health Care)
+           ADD MORE SOON
+
+    created_at: Date and time the article was published, in UTC (Jan 2020 – Oct 2026). e.g. 2026-10-16 13:14:35+00:00
+
+    headline: Title of the news article. e.g. "Apple Hits $5 Trillion Market Cap as Nvidia's ..."
+
+    content: Full text of the news article, in HTML (empty for some short news items).
+
+    source: News provider that published the article.
+           benzinga	Benzinga, a US financial news outlet
+
+    symbols: List of all stock symbols tagged on the article. e.g. [AAPL, META, MSFT]
+
+    sent_score: (derived) Net sentiment of the article content from FinBERT, positive confidence minus negative confidence
+            ranging from -1 (most negative) to 1 (most positive)
+
+PRICES: One row per stock per trading day, collected from the Alpaca Market Data API.
+
+    symbol: Stock symbol.
+           AAPL	Apple Inc. (Information Technology)
+           JNJ	Johnson & Johnson (Health Care)
+           ADD MORE SOON
+           SPY	SPDR S&P 500 ETF Trust (used as a reference for overall market movement)
+
+    timestamp: Trading day, stored as midnight US Eastern time in UTC (Jan 2020 – Oct 2026). e.g. 2020-01-02 05:00:00+00:00
+
+    open: Adjusted opening price of the day, in USD (adjusted for splits and dividends).
+
+    high: Adjusted highest price of the day, in USD.
+
+    low: Adjusted lowest price of the day, in USD.
+
+    close: Adjusted closing price of the day, in USD.
+
+    volume: Number of shares traded during the day.
+
+    trade_count: Number of individual trades during the day.
+
+    vwap: Volume-weighted average price of the day, in USD.
+
+    target: Whether the stock's closing price rises on the next trading day.
+           1	next trading day's close > today's close
+           0	next trading day's close <= today's close
