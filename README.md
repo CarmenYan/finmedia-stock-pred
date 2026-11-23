@@ -26,7 +26,7 @@ If you wanna run it yourself, here's how.
 2. Install requirements (Python 3.12)
    `conda env create -f environment.yml`, then `conda activate finmedia-stock-pred`
 3. Get the data, either way works:
-   1. Download `data.zip` from [Google Drive](LINK) and unzip it in the project root (recommended, same data we used)
+   1. Download `data.zip` from [Google Drive](https://drive.google.com/file/d/1KcK6BuRsoXB4QTyXGvNenAQvH5XVLGGE/view?usp=drive_link) and unzip it in the project root (recommended, same data we used)
    2. Or collect it yourself: get free API keys from [Alpaca](https://alpaca.markets/), put them in `.env` in the project root (this file is git-ignored) as `API_KEY=...` and `SECRET_KEY=...`, then run `collect_data.ipynb` → `clean_data.ipynb`
 4. Run the notebooks in `src/` in order: `eda.ipynb` → `make_df.ipynb`
    (FinBERT scoring takes over an hour on a laptop CPU if `data/processed/article_sentiment.parquet` is not there yet)
@@ -41,7 +41,7 @@ If you wanna run it yourself, here's how.
 
 Variable definitions are in `data/data_description.txt`.
 
-The data files (`data/raw/` and `data/processed/`) are not included in this repo because of their size. Download them from [Google Drive](LINK). The data were collected in October 2026; re-running `collect_data.ipynb` may return a different set of articles.
+The data files (`data/raw/` and `data/processed/`) are not included in this repo because of their size. Download them from [Google Drive](https://drive.google.com/file/d/1KcK6BuRsoXB4QTyXGvNenAQvH5XVLGGE/view?usp=drive_link). The data were collected in October 2026; re-running `collect_data.ipynb` may return a different set of articles.
 
 
 ## Repository structure
