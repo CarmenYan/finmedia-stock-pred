@@ -220,3 +220,4 @@ __marimo__/
 .streamlit/secrets.toml
 data/*
 !data/data_description.txt
+data.zip
